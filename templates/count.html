@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<a href="{% url 'countagain' %}">Start Again</a>
+<h1>COUNT TOTAL NUMBER OF LETTERS:</h1>
+<h1>There are {{ count }} numbers of words</h1>
+<h1>Original text:</h1>
+{{ finaltext }}
+
+<h1>Count individual words:</h1>
+
+<p>
+<table border="1">
+    <thead>
+    <th> Word</th>
+    <th>no. of rep </th>
+    </thead>
+    {% for word,counttotal in sortedwords %}
+        <tr>
+            <td>{{ word }}</td>
+
+            <td> {{ counttotal }}</td>
+        </tr>
+
+    {% endfor %}
+</table>
+</p>
+
+</body>
+</html>
